@@ -10,6 +10,8 @@ const envSchema = z.object({
   NODE_ENV: z.string(),
   DATABASE_URL: z.string(),
   NEXT_PUBLIC_APP_URL: z.string(),
+  AUTH_GOOGLE_ID: z.string(),
+  AUTH_GOOGLE_SECRET: z.string(),
 });
 
 // Function to validate environment variables
@@ -21,6 +23,8 @@ const validateEnv = () => {
       NODE_ENV: process.env.NODE_ENV,
       DATABASE_URL: process.env.DATABASE_URL,
       NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+      AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID,
+      AUTH_GOOGLE_SECRET: process.env.AUTH_GOOGLE_SECRET,
     };
     const parsed = envSchema.parse(env);
     logger.info("Environment variables validated successfully");
