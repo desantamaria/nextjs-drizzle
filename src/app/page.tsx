@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import { SignOut } from "@/components/signout-button";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -14,9 +15,7 @@ export default async function Home() {
               <Link href="/api/auth/signin">Sign in</Link>
             </Button>
           ) : (
-            <Button asChild>
-              <Link href="/api/auth/signout">Sign Out</Link>
-            </Button>
+            <SignOut />
           )}
         </div>
       </main>
